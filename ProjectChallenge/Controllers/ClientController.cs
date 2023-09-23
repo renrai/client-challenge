@@ -88,10 +88,10 @@ namespace ProjectChallengeAPI.Controllers
         /// <response code="200">Client successfully deleted.</response>
         /// <response code="404">Client not found.</response>
         /// <response code="500">Error to delete client.</response>
-        [HttpDelete]
-        public async Task<IActionResult> DeleteClient(Guid clientId)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteClient(Guid id)
         {
-            var response = await _serviceClient.Delete(clientId);
+            var response = await _serviceClient.Delete(id);
             if (!response)
                 return NotFound(new { message = "Client not found." });
             return Ok(true);
