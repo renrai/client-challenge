@@ -18,9 +18,9 @@ namespace ProjectChallengeAPI.Controllers
         /// <summary>
         /// Get all clients
         /// </summary>
-        /// <response code="200">List of all clients.</response>
-        /// <response code="404">No clients found.</response>
-        /// <response code="500">Error to get all clients.</response>
+        /// <response code="200">List of all clients</response>
+        /// <response code="404">No clients found</response>
+        /// <response code="500">Error to get all clients</response>
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -33,10 +33,10 @@ namespace ProjectChallengeAPI.Controllers
         /// <summary>
         /// Get a client by Id
         /// </summary>
-        /// <param name="id">Client Id.</param>
-        /// <response code="200">The client from the id.</response>
-        /// <response code="404">No client found.</response>
-        /// <response code="500">Error to get the client.</response>
+        /// <param name="id">Client Id</param>
+        /// <response code="200">The client from the id</response>
+        /// <response code="404">No client found</response>
+        /// <response code="500">Error to get the client</response>
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(Guid id)
         {
@@ -49,13 +49,13 @@ namespace ProjectChallengeAPI.Controllers
         }
 
         /// <summary>
-        /// Creates a clinte.
+        /// Creates a client
         /// </summary>
-        /// <param name="Client">Client data.</param>
-        /// <returns>Client successfully created.</returns>
+        /// <param name="Client">Client data</param>
+        /// <returns>Client successfully created</returns>
         /// <response code="200">Client object</response>
-        /// <response code="400">Client data invalid.</response>
-        /// <response code="500">Internal server error.</response>
+        /// <response code="400">Client invalid data</response>
+        /// <response code="500">Internal server error</response>
         [HttpPost]
         public IActionResult CreateClient(ClientRequestPost Client)
         {
@@ -63,14 +63,14 @@ namespace ProjectChallengeAPI.Controllers
             return Ok(response);
         }
         /// <summary>
-        /// Update client.
+        /// Update a client
         /// </summary> 
-        /// <param name="id">Client id to be updated.</param>
-        /// <param name="Client">Client data.</param>
-        /// <response code="200">Client successfully updated.</response>
-        /// <response code="400">Client data invalid.</response>
-        /// <response code="404">Client not found.</response>
-        /// <response code="500">Error to update client.</response>
+        /// <param name="id">Client id to be updated</param>
+        /// <param name="Client">Client data</param>
+        /// <response code="200">Client successfully updated</response>
+        /// <response code="400">Client invalid data</response>
+        /// <response code="404">Client not found</response>
+        /// <response code="500">Error to update client</response>
         [HttpPut]
         public async Task<IActionResult> UpdateClient(ClientRequestPut Client)
         {
@@ -82,12 +82,12 @@ namespace ProjectChallengeAPI.Controllers
             return Ok(response);
         }
         /// <summary>
-        /// Delete client.
+        /// Delete a client
         /// </summary>
-        /// <param name="ClientId">Client id.</param>
-        /// <response code="200">Client successfully deleted.</response>
-        /// <response code="404">Client not found.</response>
-        /// <response code="500">Error to delete client.</response>
+        /// <param name="id">Client id</param>
+        /// <response code="200">Client successfully deleted</response>
+        /// <response code="404">Client not found</response>
+        /// <response code="500">Error to delete client</response>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteClient(Guid id)
         {
